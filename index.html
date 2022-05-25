@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Resume</title>
+
+    <style>
+
+
+html{
+    font-family: 'Acme';
+    background: whitesmoke;
+    scroll-behavior: smooth;
+}
+
+hr{
+    background: grey;
+}
+#container{
+    position: relative;
+    display: flex;
+}
+#profile{
+    flex: 15%;
+    display: block;
+    position: relative;
+    margin: 5% 2% 0 10%;
+    width: 100%;
+    height: 100%;
+}
+#info-cards{
+    flex: 55%;
+    display: block;
+    margin-top: 5%;
+    margin-right: 10%;
+    width: 100%;
+    height: 100%;
+}
+#image{
+    position: relative;
+    overflow: hidden;
+}
+#image,#profile-photo{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #0e141e;
+}
+#image > a{
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgba(0,0,0,0.5) !important;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+#image > a > i{
+    -webkit-text-stroke: 1px #ffffffdd;
+    padding: 40%;
+}
+#image:hover a{
+    display: block;
+}
+#name{
+    font-size: 23px !important;
+    line-height: 20px !important;
+}
+#about,.card > ul > li{
+    padding: 0 0 0 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#about{
+    font-size: 20px !important;
+    padding: 0 !important;
+}
+#name > p{
+    font-weight: bolder;
+    font-family: 'Open Sans', sans-serif;
+}
+#email{
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-family: 'Cutive Mono',monospace;
+}
+
+#number{
+    font-size: 15px !important;
+    font-weight: bold !important;
+    font-family: 'Cutive Mono',monospace;
+}
+
+#email,#number,#education{
+    color: #555;
+    font-size: 13.5px;
+}
+strong,span{
+    color: black;
+    font-size: 16px;
+}
+#social-links,#about{
+    display: inline-block;
+}
+#social-links{
+    margin-bottom: 12px;
+}
+#social-links a{
+    margin: 0 10px;
+}
+
+.fab{
+    font-size: 1.1em;
+}
+
+.blue{
+    color: #097bbf !important;
+    font-size: 13px;
+}
+
+.card{
+    box-shadow: 0 3px 10px 0 rgba(0,0,0,.1);
+    overflow-x: hidden;
+    margin-bottom: 30px;
+    padding: 15px 30px 30px 30px;
+    background-color: #fff;
+}
+.card > p{
+    color: #0e141e;
+    font-weight: bolder;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.card > ul{
+    list-style-type: circle;
+    line-height: normal;
+    display: inline-block;
+}
+.tags{
+    font-size: 17px;
+    font-weight: bolder;
+}
+.tags ~ a{
+    display: none !important;
+}
+.tags span{
+    font-size: 14px;
+    font-weight: normal;
+    color: #0e141e;
+}
+.tags span span{
+    color: #738f93;
+}
+@media screen and (max-width:1090px){
+    #profile{
+        margin-left: 5%;
+    }
+}
+@media screen and (max-width:850px){
+    #container{
+        display: block;
+    }
+    #profile{
+        width: 90%;
+    }
+    .card{
+        margin: 0 5%;
+        margin-bottom: 30px;
+    }
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(175, 170, 170);
+  margin-right: 185px;
+  margin-left: 185px;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 50px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #c07dc2;
+  color: white;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+
+</style>
+</head>
+<body>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Back to Top</button>
+
+<div class="topnav">
+    <a class="active" href="index.html">About Me</a>
+    <a href="contact.html">Contact Me</a>
+  </div>
+    
+    <div id="inner-nav"></div>
+    <div id="container">
+        <div id="profile">
+            <div id="image">
+                <img id="profile-photo" src="https://scontent.xx.fbcdn.net/v/t1.15752-9/280456200_1398480163966261_3583808006559611824_n.png?stp=dst-png_s206x206&_nc_cat=106&ccb=1-7&_nc_sid=aee45a&_nc_eui2=AeE51GKEl322Lrw2olU-pdpcjQHOm6pmHzeNAc6bqmYfN-A6TIrXlnV8Cd86Tn5kf446QOoCpYttn2kbx3Vgm3e2&_nc_ohc=lDBHpr_SATYAX_fUI36&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.xx&oh=03_AVI9dLlrN5ADeMKX2QuEUGqasZFfLjvcoqS2TLvv2ham2w&oe=62AFA9C8" alt="Profile-Image">
+                
+            </div>
+            <p id="name" style="font-family:Acme; text-align: center;">JANICA V. LOZADA<br><span id="email">janicalozada@yahoo.com</span><br><span id="number">(+63)9751555448</span></p>
+            <hr width="100%">
+            <div id="about">
+                <p style="display:inline; font-family:Acme;">PERSONAL SUMMARY</p>
+            </div>
+
+            <ul style="text-align:justify; margin-right:15px;">
+                <li>A College student in Centro Escolar University-Makati with a course of Bachelor of Science major in Information Technology.</li>
+                <br>
+                <li>Has been certified a National Certificate II with full qualifications in Computer System Servicing.</li>
+            </ul>
+        </div>
+        <div id="info-cards">
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;TECHNICAL SKILLS</p>
+                <hr>
+                <ul>
+                    <li>- Able to troubleshoot computer and printer</li>
+                    <li>- Perform Ethernet Cabling</li>
+                    <li>- Assemble and Disassemble of System Unit</li>
+                    <li>- Knowledgeable in DOS Commands</li>
+                    <li>- Operating System Installation (Windows 7, Windows 2008, Windows 10, Windows 11)</li>
+                    <li>- Installation of Software</li>
+                    <li>- Creating Bootable Drive</li>
+                    <li>- Computer Networking</li>
+                    <li>- Router Configuration</li>
+                    <li>- Computer Server Setup</li>
+                    <li>- Creating a Back Up Files</li>
+                    <li>- Basic knowledge in Programming and Web Developing</li>
+                    <li>- Designing a Computer Network</li>
+                    <li>- Proficient in Microsoft Suites (MS Word, MS PowerPoint, MS Excel)</li>
+                </ul>  
+                  
+            </div>
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;CERTIFICATION</p>
+                <hr>
+                <ul>
+                    <li><p class="tags">TESDA National Competency II for Computer System Servicing<br><span>Technical Education and Skills Development Authority<br>Remarks: Competent<br><span>September 2018</span></span></p></li>
+                    <li><p class="tags">Work Immersion Completion<br><span>Mandaluyong City Hall- Engineering Departement<br><span>November 2018</span></span></p></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;PREVIOUS EXPERIENCE</p>
+                <hr>
+                <ul>
+                    <li><p class="tags">ASSISTANT SECRETARY - ELECTRICAL SECTION<br><span>City Engineering Department - Mandaluyong City Hall<br><span>November 12 - November 23</span></span></p></li>
+                    <li style="font-size:15px;">- Responsible for filing CEI and building permits by date and permit number.</li>
+                    <li style="font-size:15px;">- Sealed CEI permits.</li>
+                    <li style="font-size:15px;">- Record and encode bill of payment.</li>
+                </ul>    
+                
+            </div>
+
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;EDUCATION</p>
+                <hr>
+                <ul>
+                    <li><p class="tags">COLLEGE<br><span>Centro Escolar University-Makati<br>103 Esteban St., Legazpi Village, Makati City<br><span>2019-Current</span></span></p></li>
+                    <li><p class="tags">SENIOR HIGHSCHOOL<br><span>Centro Escolar Integrated School-Manila<br>9 Mendiola Street San Miguel, Manila<br>STEM Grade 11 - CHS (Computer Hardware Services) Grade 12<br>GWA 93.07%<br><span>2016-2019</span></span></p></li>
+                    <li><p class="tags">JUNIOR HIGHSCHOOL<br><span>Jose Rizal University<br>80 Shaw Boulevard Mandaluyong City<br>Grade 7 - 10<br><span>2013-2017</span></span></p></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;AWARDS/OTHER</p>
+                <hr>
+                <ul>
+                    <li><p class="tags">Educational Service Contracting (ESC) Grantee<br><span>DepEd Voucher<br><span>2013 - 2018 </span></span></p></li>
+                </ul>
+            </div>
+
+            <div class="card" style="border-radius:10px;">
+                <p>&nbsp;&nbsp;&nbsp;SEMINARS</p>
+                <hr>
+                <ul>
+                    <li><p class="tags">Leadership Training<br><span>Conducted by: Student Council of Senior High School in Centro Escolar University-Manila<br><span>July 2018</span></span></p></li>
+                    <li><p class="tags"> Red Cross<br><span>Conducted by: Red Cross Officers in Jose Rizal University<br><span>September 2015</span></span></p></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Contact Me</title>
+
+    <style>
+        body {font-family: 'Acme';}
+        * {box-sizing: border-box;}
+        
+        input[type=text], select, textarea {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        
+        input[type=submit] {
+          background-color: #04AA6D;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        .container {
+          border-radius: 10px;
+          background-color: #ac8787;
+          padding: 20px;
+          margin-left: 80px;
+          margin-right:80px;
+        }
+       
+</style>
+
+</head>
+<body>
+    
+    <h3 style="padding-top:30px; text-align: center; font-size: 25px;"><b>CONTACT ME</b></h3>
+
+    <div class="container">
+      <form method="get">
+        <label for="fname">FIRST NAME</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your first name.." style="font-family:Acme; font-size: 20px;" required>
+    
+        <label for="lname">LAST NAME</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." style="font-family:Acme; font-size:20px;" required>
+    
+        <label for="country">COUNTRY</label>
+        <select id="country" name="country" style="font-family:Acme; font-size: 20px;">
+          <option value="Australia" style="font-family:Acme;">Australia</option>
+          <option value="Canada" style="font-family:Acme;">Canada</option>
+          <option value="USA" style="font-family:Acme;">USA</option>
+          <option value="Philippines" style="font-family:Acme;">Philippines</option>
+          <option value="Others" style="font-family:Acme;">Others</option>
+        </select>
+    
+        <label for="subject">REMARKS</label>
+        <textarea id="remarks" name="subject" placeholder="Write your remarks here..." style="height:200px; font-family:Acme; font-size:20px;" required></textarea>
+    
+        <button onclick="myFunction()" style="font-family:Acme;">SUBMIT</button>
+        <script>
+            function myFunction() {
+                if(document.getElementById("fname").value.length == 0)
+                {
+                    alert("Fill in the required fields.")
+                }
+                else
+                {
+                    alert("Sent!");
+                }
+            }
+        </script>
+        <br>
+        <br>
+        <a href="index.html" class="previous">&laquo; BACK</a>
+      </form>
+    </div>
+    
+
+</body>
+</html>
